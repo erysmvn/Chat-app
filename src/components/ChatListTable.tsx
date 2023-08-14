@@ -1,6 +1,6 @@
 import { ChatPreview } from "../models/ChatPreview";
 import "./ChatListTable.css"
-import ChatPreviewCell from "./ChatPreviewCell";
+import ChatPreviewCell from "./ChatPreview";
 
 interface Props {
     chatPreviews: ChatPreview[]

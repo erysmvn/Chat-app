@@ -1,5 +1,5 @@
 import { ChatPreview } from "../models/ChatPreview";
-import "./ChatPreviewCell.css"
+import "./ChatPreview.css"
 
 interface Props {
     chatPreview: ChatPreview

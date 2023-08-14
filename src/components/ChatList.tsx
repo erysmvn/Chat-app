@@ -1,7 +1,6 @@
 import { ChatPreview } from "../models/ChatPreview";
-import "./ChatListSelection.css"
+import "./ChatList.css"
 import ChatListTable from "./ChatListTable";
-import ListHeader from "./ListHeader";
 
 function ChatListSelection() {
 
@@ -21,8 +20,13 @@ function ChatListSelection() {
     ]
     return (
         <div className="chat-list-container">
-            <ListHeader />
-            <ChatListTable chatPreviews={chatPreviews}/>
+            <div className="chat-header">
+                <h1>Chat</h1>
+                <button className="chat-header-new-button">Nuova chat</button>
+            </div>
+            <div className="preview-cell">
+                <ChatListTable chatPreviews={chatPreviews}/>
+            </div>
         </div>
     );
 }
