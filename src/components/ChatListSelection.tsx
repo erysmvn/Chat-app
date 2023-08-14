@@ -8,15 +8,15 @@ function ChatListSelection() {
     const chatPreviews: ChatPreview[] = [
         {
             userFullName: "Giovanni",
-            lastMessage: "lot"
+            lastMessage: "Come va con il lavoro?"
         },
         {
             userFullName: "Jessico Calcetto",
-            lastMessage: "Stase che famo?"
+            lastMessage: "Pronto per la partita di domani?"
         },
         {
-            userFullName: "Juan mecanico",
-            lastMessage: "està toda mojada"
+            userFullName: "Juan meccanico",
+            lastMessage: "Devi assolutamente venire a vedere!"
         },
     ]
     return (
