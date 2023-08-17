@@ -1,6 +1,7 @@
 import { ChatPreview } from "../models/ChatPreview";
 import "./ChatList.css"
 import ChatListTable from "./ChatListTable";
+import ChatPreviewCell from "./ChatPreview";
 
 function ChatListSelection() {
 

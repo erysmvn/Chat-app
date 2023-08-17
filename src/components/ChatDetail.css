@@ -7,11 +7,15 @@
   color: white;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
+}
+
+.chat-detail-container h1 {
   padding-left: 2%;
 }
 
 .chat-bubbles-container {
   height: 100%;
+  flex-direction: column;
   padding: 12px;
   overflow: scroll;
 }
@@ -39,7 +43,7 @@
 .chat-bubble {
   display: flex;
   align-items: center;
-  padding: 12px;
+  padding: 8px;
 }
 
 .chat-bubble:hover {

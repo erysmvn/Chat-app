@@ -15,6 +15,8 @@ function ChatDetailSelection() {
                 sentAt: new Date().toString(),
             },
         ]);
+
+        setInputContent("")
     };
 
     const handleKeyDown = (event: any) => {
