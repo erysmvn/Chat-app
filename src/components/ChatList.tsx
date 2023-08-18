@@ -7,23 +7,35 @@ function ChatListSelection() {
 
     const chatPreviews: ChatPreview[] = [
         {
-            userFullName: "Giovanni",
-            lastMessage: "Come va con il lavoro?"
+            name1: "Giovanni",
+            name2: "",
+            userID: "",
+            chatID: "",
+            lastMessage: "Come va con il lavoro?",
+            sentAt: new Date().toString(),
         },
         {
-            userFullName: "Jessico Calcetto",
-            lastMessage: "Pronto per la partita di domani?"
+            name1: "Jessico Calcetto",
+            name2: "",
+            userID: "",
+            chatID: "",
+            lastMessage: "Pronto per la partita di domani?",
+            sentAt: new Date().toString(),
         },
         {
-            userFullName: "Juan meccanico",
-            lastMessage: "Devi assolutamente venire a vedere!"
+            name1: "Juan meccanico",
+            name2: "",
+            userID: "",
+            chatID: "",
+            lastMessage: "Devi assolutamente venire a vedere!",
+            sentAt: new Date().toString(),
         },
     ]
     return (
         <div className="chat-list-container">
             <div className="chat-header">
                 <h1>Chat</h1>
-                <button className="chat-header-new-button">Nuova chat</button>
+                <button type="submit" id="new" className="chat-header-new-button">Nuova chat</button>
             </div>
             <div className="preview-cell">
                 <ChatListTable chatPreviews={chatPreviews}/>

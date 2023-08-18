@@ -15,11 +15,7 @@
     justify-content: space-around;
     border-bottom: 1px solid #465666;
   }
-  
-.chat-header p {
-    font-size: 23px;
-  }
-  
+
 .chat-header-new-button {
     font-size: 12px;
     border-radius: 8px;
@@ -31,11 +27,6 @@
 .chat-header-new-button:hover {
     background-color: #8096ab;
     transition: 0.2s all;
-  }
-  
-.chat-header-new-button p {
-    font-size: 14px;
-    padding: 5px 10px;
   }
   
 .preview-cell {
