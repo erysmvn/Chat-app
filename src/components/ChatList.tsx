@@ -1,47 +1,71 @@
+import { useState } from "react";
 import { ChatPreview } from "../models/ChatPreview";
-import "./ChatList.css"
-import ChatListTable from "./ChatListTable";
-import ChatPreviewCell from "./ChatPreview";
+import { User } from "../models/Users";
+import { createOrUpdateChat } from "../services/ChatPreviewService";
+import "./ChatList.css";
 
-function ChatListSelection() {
-
-    const chatPreviews: ChatPreview[] = [
-        {
-            name1: "Giovanni",
-            name2: "",
-            userID: "",
-            chatID: "",
-            lastMessage: "Come va con il lavoro?",
-            sentAt: new Date().toString(),
-        },
-        {
-            name1: "Jessico Calcetto",
-            name2: "",
-            userID: "",
-            chatID: "",
-            lastMessage: "Pronto per la partita di domani?",
-            sentAt: new Date().toString(),
-        },
-        {
-            name1: "Juan meccanico",
-            name2: "",
-            userID: "",
-            chatID: "",
-            lastMessage: "Devi assolutamente venire a vedere!",
-            sentAt: new Date().toString(),
-        },
-    ]
-    return (
-        <div className="chat-list-container">
-            <div className="chat-header">
-                <h1>Chat</h1>
-                <button type="submit" id="new" className="chat-header-new-button">Nuova chat</button>
-            </div>
-            <div className="preview-cell">
-                <ChatListTable chatPreviews={chatPreviews}/>
-            </div>
-        </div>
-    );
+interface Props {
+  chatPreviews: ChatPreview[];
+  onChatSelected: (preview: ChatPreview) => void;
+  user: User;
 }
 
-export default ChatListSelection;
+function ChatList(props: Props) {
+  const onCreateChat = (user: User) => {
+    const chatID = props.user.userID + "-" + user.userID;
+    const chatPreview1: ChatPreview = {
+      name1: user.name,
+      name2: props.user.name,
+      chatID: chatID,
+      userID: props.user.userID,
+      lastMessage: "Conversazione iniziata",
+      sentAt: "",
+    };
+    const chatPreview2: ChatPreview = {
+      name1: user.name,
+      name2: props.user.name,
+      chatID: chatID,
+      userID: props.user.userID,
+      lastMessage: "Conversazione iniziata",
+      sentAt: "",
+    };
+    createOrUpdateChat(props.user.userID, chatID, chatPreview1);
+    createOrUpdateChat(props.user.userID, chatID, chatPreview2);
+    props.onChatSelected(chatPreview1);
+  };
+
+  const [newChatOpen, setNewChatOpen] = useState(false);
+
+  return (
+    <div className="chat-list-container">
+      <div className="chat-header">
+        <h1>Chat</h1>
+        <button type="submit" id="new" className="chat-header-new-button">
+          Nuova chat
+        </button>
+      </div>
+      <div className="chat-cells-container">
+        {props.user &&
+          props.chatPreviews.map((e) => {
+            const receiverName = props.user.name == e.name1 ? e.name2 : e.name1;
+            return (
+              <div
+                key={e.chatID}
+                className="preview-cell"
+                onClick={() => {
+                  props.onChatSelected(e);
+                }}
+              >
+                <div>
+                  <p className="preview-cell-title">{receiverName}</p>
+                  <p className="preview-cell-subtitle">{e.lastMessage}</p>
+                </div>
+              </div>
+            );
+          })}
+      </div>
+    </div>
+  );
+}
+
+export default ChatList;
