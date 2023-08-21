@@ -1,4 +1,4 @@
 export interface User {
-    name: String;
-    userID: String;
+    name: string;
+    userID: string;
 }

@@ -1,5 +1,9 @@
-import React from "react";
-import "./App.css";
+import {
+  BrowserRouter, Link, Route, Routes
+} from "react-router-dom";
+import Chat from './pages/Chat';
+import Home from './pages/Home';
+import Login from './pages/Login';
 
 import { initializeApp } from "firebase/app";
 import { FIREBASE_DEV_CONFIG } from "./FirebaseConfig";
@@ -7,18 +11,19 @@ import { FIREBASE_DEV_CONFIG } from "./FirebaseConfig";
 
 import ChatDetailSelection from "./components/ChatDetail";
 import ChatListSelection from "./components/ChatList";
+import ChatDetail from "./components/ChatDetail";
 
 function App() {
   const app = initializeApp(FIREBASE_DEV_CONFIG)
 
   return (
-    <div className="app-container">
-      <div className="chat-header">
-        
-      </div>
-      <ChatListSelection />
-      <ChatDetailSelection />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="chat" element={<Chat />} />
+        <Route path="login" element={<Login />} />
+      </Routes>
+  </BrowserRouter>
   );
 }
 

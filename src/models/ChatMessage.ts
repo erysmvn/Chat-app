@@ -1,5 +1,5 @@
 export interface ChatMessage {
-    who: String;
-    content: String;
-    sentAt: String;
+    who: string;
+    content: string;
+    sentAt: string;
 }

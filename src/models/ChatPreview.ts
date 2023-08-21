@@ -1,8 +1,8 @@
 export interface ChatPreview {
-    name1: String;
-    name2: String;
-    userID: String;
-    chatID: String;
-    lastMessage: String;
-    sentAt: String;
+    name1: string;
+    name2: string;
+    userID: string;
+    chatID: string;
+    lastMessage: string;
+    sentAt: string;
 }
