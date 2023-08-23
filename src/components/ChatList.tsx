@@ -3,6 +3,7 @@ import { ChatPreview } from "../models/ChatPreview";
 import { User } from "../models/Users";
 import { createOrUpdateChat } from "../services/ChatPreviewService";
 import "./ChatList.css";
+import NewChat from "./NewChat";
 
 interface Props {
   chatPreviews: ChatPreview[];
@@ -38,9 +39,14 @@ function ChatList(props: Props) {
 
   return (
     <div className="chat-list-container">
+      <NewChat
+        onUserSelected={(user) => onCreateChat(user)}
+        open={newChatOpen}
+        onClose={() => setNewChatOpen(false)}
+        />
       <div className="chat-header">
         <h1>Chat</h1>
-        <button type="submit" id="new" className="chat-header-new-button">
+        <button onClick={() => setNewChatOpen(true)} id="new" className="chat-header-new-button">
           Nuova chat
         </button>
       </div>

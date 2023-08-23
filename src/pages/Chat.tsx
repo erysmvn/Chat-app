@@ -36,7 +36,7 @@ function Chat() {
 
   return (
     <div className="chat-container">
-      {user && (
+      {user && 
         <>
           <ChatList
             chatPreviews={chatPreview}
@@ -45,7 +45,7 @@ function Chat() {
           />
           <ChatDetail user={user} chat={selectedChat} />
         </>
-      )}
+      }
     </div>
   );
 }

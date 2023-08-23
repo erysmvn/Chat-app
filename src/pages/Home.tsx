@@ -29,12 +29,12 @@ function Home() {
         <p>{sentences[sentencesIndex]}</p>
         <button onClick={() => navigate("./Login")}>Inizia subito</button>
         <div className="header-img-container">
-          <img src="./header-girl-texting" alt="" />
-          <img src="./header-people-talking" alt="" />
+          <img src="./imgs/header-girl-texting.jpg" alt="" />
+          <img src="./imgs/header-people-talking.png" alt="" />
         </div>
       </header>
       <div className="features-section">
-        <h2>Le fratures</h2>
+        <h2>Le features</h2>
         <div className="feature-list-container">
           <div className="feature-box">
             <h3>Sicuro e veloce</h3>

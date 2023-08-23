@@ -8,11 +8,6 @@ import Login from './pages/Login';
 import { initializeApp } from "firebase/app";
 import { FIREBASE_DEV_CONFIG } from "./FirebaseConfig";
 
-
-import ChatDetailSelection from "./components/ChatDetail";
-import ChatListSelection from "./components/ChatList";
-import ChatDetail from "./components/ChatDetail";
-
 function App() {
   const app = initializeApp(FIREBASE_DEV_CONFIG)
 
@@ -20,8 +15,8 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="chat" element={<Chat />} />
-        <Route path="login" element={<Login />} />
+        <Route path="Chat" element={<Chat />} />
+        <Route path="Login" element={<Login />} />
       </Routes>
   </BrowserRouter>
   );

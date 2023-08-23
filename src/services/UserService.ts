@@ -1,13 +1,12 @@
 import { getDatabase, onValue, ref, set, get } from "firebase/database";
 import { User } from "../models/Users";
-import { resolve } from "path";
 
 export function getUsers(onResult: (users: User[]) => void) {
     const db = getDatabase();
     
     const usersRef = ref(db, "users");
     onValue(usersRef, (snapshot) => {
-        const data = snapshot.val();    
+        const data = snapshot.val();
         if (data) {
             let users: User[] = []
             const keys = Object.keys(data)
@@ -32,8 +31,8 @@ export function getUser(userID: string): Promise<User> {
         get(userRef).then((snapshot) => {
             const data = snapshot.val();
             const user: User = {
-                name:data.name,
-                userID:data.userID,
+                name: data.name,
+                userID: data.userID
             }
             resolve(user)
         });
