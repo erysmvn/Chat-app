@@ -10,21 +10,21 @@ export function getChatPreviews(onResult: (previews: ChatPreview[]) => void) {
         const data = snapshot.val();
         if (data) {
             const keys = Object.keys(data)
-            let chatPreview: ChatPreview[] = []
-            chatPreview = keys.map((key_: any) => {
+            let chatPreviews: ChatPreview[] = []
+            chatPreviews = keys.map((key_: any) => {
                 const chatPreview_ = data[key_]
                 const chatPreview: ChatPreview = {
                     name1: chatPreview_.name1,
                     name2: chatPreview_.name2,
-                    chatID: chatPreview_.chatID,
-                    userID: userID!,
+                    chatID: chatPreview_.chatId,
+                    userId: userID!,
                     lastMessage: chatPreview_.lastMessage,
                     sentAt: chatPreview_.sentAt,
                 }
                 return chatPreview
             })
 
-            const sortedPreviews = chatPreview.sort((a, b) => a.sentAt > b.sentAt ? -1 : 1)
+            const sortedPreviews = chatPreviews.sort((a, b) => a.sentAt > b.sentAt ? -1 : 1)
             onResult(sortedPreviews)
         }
     });

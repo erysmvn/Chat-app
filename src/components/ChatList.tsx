@@ -18,7 +18,7 @@ function ChatList(props: Props) {
       name1: user.name,
       name2: props.user.name,
       chatID: chatID,
-      userID: props.user.userID,
+      userId: props.user.userID,
       lastMessage: "Conversazione iniziata",
       sentAt: "",
     };
@@ -26,7 +26,7 @@ function ChatList(props: Props) {
       name1: user.name,
       name2: props.user.name,
       chatID: chatID,
-      userID: props.user.userID,
+      userId: props.user.userID,
       lastMessage: "Conversazione iniziata",
       sentAt: "",
     };

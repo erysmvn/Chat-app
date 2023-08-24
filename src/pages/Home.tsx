@@ -29,8 +29,8 @@ function Home() {
         <p>{sentences[sentencesIndex]}</p>
         <button onClick={() => navigate("./Login")}>Inizia subito</button>
         <div className="header-img-container">
-          <img src="./imgs/header-girl-texting.jpg" alt="" />
-          <img src="./imgs/header-people-talking.png" alt="" />
+          <img src="./header-girl-texting.jpg" alt="" />
+          <img src="./header-people-talking.png" alt="" />
         </div>
       </header>
       <div className="features-section">

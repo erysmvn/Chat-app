@@ -12,7 +12,7 @@ import ChatList from "../components/ChatList";
 function Chat() {
   const [selectedChat, setSelectedChat] = useState<ChatPreview>();
   const [user, setUser] = useState<User>();
-  const [chatPreview, setChatPreview] = useState<ChatPreview[]>([]);
+  const [chatPreviews, setChatPreviews] = useState<ChatPreview[]>([]);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -20,7 +20,7 @@ function Chat() {
     const userID = localStorage.getItem("userID");
     if (userID) {
       getChatPreviews((previews) => {
-        setChatPreview(previews);
+        setChatPreviews(previews);
       });
       getUser(userID).then((user_) => {
         if (user_) {
@@ -39,7 +39,7 @@ function Chat() {
       {user && 
         <>
           <ChatList
-            chatPreviews={chatPreview}
+            chatPreviews={chatPreviews}
             user={user}
             onChatSelected={(preview) => setSelectedChat(preview)}
           />

@@ -6,4 +6,4 @@ export const FIREBASE_DEV_CONFIG = {
     storageBucket: "chat-app-40f32.appspot.com",
     messagingSenderId: "605780712843",
     appId: "1:605780712843:web:b1fa63e836b6fa2528238e",
-}
+};

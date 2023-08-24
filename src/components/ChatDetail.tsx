@@ -53,15 +53,15 @@ function ChatDetail(props: Props) {
 
       if (props.chat) {
         sendMessage(newMessage, props.chat.chatID);
-        const ChatPreview_: ChatPreview = {
+        const chatPreview_: ChatPreview = {
           name1: props.chat!.name1,
           name2: props.chat!.name2,
           chatID: props.chat!.chatID,
-          userID: props.chat!.userID,
+          userId: props.chat!.userId,
           lastMessage: newMessage.content,
           sentAt: newMessage.sentAt,
         };
-        createOrUpdateChat(props.user.userID, props.chat!.chatID, ChatPreview_);
+        createOrUpdateChat(props.user.userID, props.chat!.chatID, chatPreview_);
         setInputContent("");
       }
     } else {
