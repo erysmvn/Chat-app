@@ -20,7 +20,7 @@ function NewChat(props: Props) {
 
     useEffect(() => {
         // Download users through a promise
-        getUsers((users) => setUsers(users.filter(u => u.userID != localStorage.getItem("userID"))))
+        getUsers((users) => setUsers(users.filter(u => u.userId != localStorage.getItem("userId"))))
     }, []);
 
     return(
@@ -32,8 +32,7 @@ function NewChat(props: Props) {
                         <div onClick={() => onUserSelected(user)} className="new-chat-contact-container">
                             <p>{user.name}</p>
                         </div>
-                    )
-                })}
+                    )})}
             <div onClick={() => props.onClose()} className="new-chat-contact-container new-chat-close-modal">
                 <p>Chiudi</p>
             </div>

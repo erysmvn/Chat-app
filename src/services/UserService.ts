@@ -14,7 +14,7 @@ export function getUsers(onResult: (users: User[]) => void) {
                 const user_ = data[key_]
                 const user: User = {
                     name: user_.name,
-                    userID: user_.userID,
+                    userId: user_.userId
                 }
                 return user
             })
@@ -32,7 +32,7 @@ export function getUser(userID: string): Promise<User> {
             const data = snapshot.val();
             const user: User = {
                 name: data.name,
-                userID: data.userID
+                userId: data.userId
             }
             resolve(user)
         });
@@ -41,5 +41,5 @@ export function getUser(userID: string): Promise<User> {
 
 export function addUser(user: User) {
     const db = getDatabase();
-    set(ref(db,'users/' + user.userID), user);
+    set(ref(db,'users/' + user.userId), user);
 }

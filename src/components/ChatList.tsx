@@ -13,25 +13,25 @@ interface Props {
 
 function ChatList(props: Props) {
   const onCreateChat = (user: User) => {
-    const chatID = props.user.userID + "-" + user.userID;
+    const chatId = props.user.userId + "-" + user.userId;
     const chatPreview1: ChatPreview = {
       name1: user.name,
       name2: props.user.name,
-      chatID: chatID,
-      userId: props.user.userID,
+      chatID: chatId,
+      userID: user.userId,
       lastMessage: "Conversazione iniziata",
       sentAt: "",
     };
     const chatPreview2: ChatPreview = {
       name1: user.name,
       name2: props.user.name,
-      chatID: chatID,
-      userId: props.user.userID,
+      chatID: chatId,
+      userID: props.user.userId,
       lastMessage: "Conversazione iniziata",
       sentAt: "",
     };
-    createOrUpdateChat(props.user.userID, chatID, chatPreview1);
-    createOrUpdateChat(props.user.userID, chatID, chatPreview2);
+    createOrUpdateChat(props.user.userId, chatId, chatPreview1);
+    createOrUpdateChat(user.userId, chatId, chatPreview2);
     props.onChatSelected(chatPreview1);
   };
 
@@ -46,9 +46,12 @@ function ChatList(props: Props) {
         />
       <div className="chat-header">
         <h1>Chat</h1>
-        <button onClick={() => setNewChatOpen(true)} id="new" className="chat-header-new-button">
-          Nuova chat
-        </button>
+        <div
+          onClick={() => setNewChatOpen(true)}
+          className="chat-header-new-button"
+        >
+          <p>Nuova chat</p>
+        </div>
       </div>
       <div className="chat-cells-container">
         {props.user &&

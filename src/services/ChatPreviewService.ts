@@ -2,10 +2,10 @@ import { getDatabase, ref, onValue, set } from "firebase/database";
 import { ChatPreview } from "../models/ChatPreview";
 
 export function getChatPreviews(onResult: (previews: ChatPreview[]) => void) {
-    const userID = localStorage.getItem("userID")
+    const userId = localStorage.getItem("userId")
     const db = getDatabase();
 
-    const chatsRef = ref(db, "chats/" + userID);
+    const chatsRef = ref(db, "chats/" + userId);
     onValue(chatsRef, (snapshot) => {
         const data = snapshot.val();
         if (data) {
@@ -16,8 +16,8 @@ export function getChatPreviews(onResult: (previews: ChatPreview[]) => void) {
                 const chatPreview: ChatPreview = {
                     name1: chatPreview_.name1,
                     name2: chatPreview_.name2,
-                    chatID: chatPreview_.chatId,
-                    userId: userID!,
+                    chatID: chatPreview_.chatID,
+                    userID: userId!,
                     lastMessage: chatPreview_.lastMessage,
                     sentAt: chatPreview_.sentAt,
                 }

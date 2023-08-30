@@ -46,7 +46,7 @@ function ChatDetail(props: Props) {
   let onSend = (content: string) => {
     if (content) {
       let newMessage: ChatMessage = {
-        who: props.user.userID,
+        who: props.user.userId,
         content: content,
         sentAt: new Date().getTime().toString(),
       };
@@ -57,11 +57,11 @@ function ChatDetail(props: Props) {
           name1: props.chat!.name1,
           name2: props.chat!.name2,
           chatID: props.chat!.chatID,
-          userId: props.chat!.userId,
+          userID: props.chat!.userID,
           lastMessage: newMessage.content,
           sentAt: newMessage.sentAt,
         };
-        createOrUpdateChat(props.user.userID, props.chat!.chatID, chatPreview_);
+        createOrUpdateChat(props.user.userId, props.chat!.chatID, chatPreview_);
         setInputContent("");
       }
     } else {
@@ -77,7 +77,7 @@ function ChatDetail(props: Props) {
         <>
           <div className="chat-bubbles-container">
             {chatMessages.map((msg, index) => {
-              const who_ = props.user.userID == msg.who ? "me" : "sender";
+              const who_ = props.user.userId == msg.who ? "me" : "sender";
               return (
                 <div className={"chat-bubble chat-bubble-" + who_}>
                   <div className={"chat-bubble-pic chat-bubble-pic-" + who_}>
@@ -118,12 +118,14 @@ function ChatDetail(props: Props) {
               placeholder={"Invia un messaggio"}
               onChange={(evt) => setInputContent(evt.target.value)}
             ></input>
-            <button
-              onClick={() => onSend(inputContent)}
+            <div
+              onClick={() => { 
+                onSend(inputContent)
+              }}
               className="send-mssg-btn"
             >
-              Invia
-            </button>
+              <p>Invia</p>
+            </div>
           </div>
         </>
       ) : (

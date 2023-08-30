@@ -8,8 +8,8 @@ export function signIn(email: string, password: string): Promise<string> {
     return new Promise((resolve, reject) => {
         signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
-            const userID = userCredential.user.uid;
-            resolve(userID)
+            const userId = userCredential.user.uid;
+            resolve(userId)
         })
         .catch((error) => reject(error))
     })
@@ -21,13 +21,13 @@ export function signUp(email: string, password: string, name: string): Promise<s
         createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
             // Signed in
-            const userID = userCredential.user.uid;
+            const userId = userCredential.user.uid;
             const user: User = {
                 name: name,
-                userID: userID
+                userId: userId
             }
             addUser(user)
-            resolve(userID)
+            resolve(userId)
         })
         .catch((error) => reject(error))
     })

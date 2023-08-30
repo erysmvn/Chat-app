@@ -17,12 +17,12 @@ function Chat() {
 
   useEffect(() => {
     // Verify if there's a session
-    const userID = localStorage.getItem("userID");
-    if (userID) {
+    const userId = localStorage.getItem("userId");
+    if (userId) {
       getChatPreviews((previews) => {
         setChatPreviews(previews);
       });
-      getUser(userID).then((user_) => {
+      getUser(userId).then((user_) => {
         if (user_) {
           setUser(user_);
         } else {

@@ -12,7 +12,7 @@ function Login() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (localStorage.getItem("userID")) {
+    if (localStorage.getItem("userId")) {
       navigate("../chat");
     }
   }, []);
@@ -20,9 +20,9 @@ function Login() {
   const onSignIn = () => {
     setErrorMessage("");
     signIn(email, password)
-      .then((userID: string) => {
+      .then((userId: string) => {
         // redirect
-        localStorage.setItem("userID", userID);
+        localStorage.setItem("userId", userId);
         navigate("../chat");
       })
       .catch((error) => setErrorMessage("Si è verificato un errore!"));
@@ -31,9 +31,9 @@ function Login() {
   const onSignUp = () => {
     setErrorMessage("");
     signUp(email, password, username)
-      .then((userID: string) => {
+      .then((userId: string) => {
         // redirect
-        localStorage.setItem("userID", userID);
+        localStorage.setItem("userId", userId);
         navigate("../chat");
       })
       .catch((error) => setErrorMessage("Si è verificato un errore!"));

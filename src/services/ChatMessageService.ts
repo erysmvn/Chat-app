@@ -15,10 +15,10 @@ export function getMessages(chatID: string, onResult: ((messages: ChatMessage[])
                     content: data[key_].content,
                     sentAt: data[key_].sentAt,
                 };
-                return chatMessage
+                return chatMessage;
             });
             
-            const sortedMsg = chatMessage.sort((a, b) => a.sentAt > b.sentAt ? 1 : -1)
+            const sortedMsg = chatMessage.sort((a, b) => a.sentAt > b.sentAt ? 1 : - 1)
             onResult(sortedMsg)
         } else {
             onResult([])
