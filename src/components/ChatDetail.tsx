@@ -118,14 +118,14 @@ function ChatDetail(props: Props) {
               placeholder={"Invia un messaggio"}
               onChange={(evt) => setInputContent(evt.target.value)}
             ></input>
-            <div
+            <button
               onClick={() => { 
                 onSend(inputContent)
               }}
               className="send-mssg-btn"
             >
-              <p>Invia</p>
-            </div>
+              Invia
+            </button>
           </div>
         </>
       ) : (
