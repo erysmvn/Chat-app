@@ -29,6 +29,11 @@
   transition: 0.2s all;
 }
 
+.chat-header-new-button > p {
+  text-align: center;
+  width: 80px;
+}
+
 .preview-cell {
   display: flex;
   align-items: center;

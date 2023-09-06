@@ -49,8 +49,8 @@ function ChatList(props: Props) {
         <div
           onClick={() => setNewChatOpen(true)}
           className="chat-header-new-button"
-        >
-          <p>Nuova chat</p>
+          >
+          <p>New chat</p>
         </div>
       </div>
       <div className="chat-cells-container">

@@ -5,8 +5,8 @@ function ChatEmptyState() {
     <div className="empty-state-container">
       <img src="chat-empty-state.png" alt="" />
       <p>
-        Avvia una chat o selezionane una nella lista qui a sinistra per leggerne
-        il dettaglio
+        Start a chat or select one from the list on the left to read its
+        the detail
       </p>
     </div>
   );

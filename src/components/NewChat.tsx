@@ -26,7 +26,7 @@ function NewChat(props: Props) {
     return(
         <Popup open={props.open} modal closeOnDocumentClick onClose={() => props.onClose()}>
             <div className="new-chat-container">
-                <p>Scegli una persona con cui parlare</p>
+                <p>Choose a user to talk to</p>
                 {users.map(user => {
                     return(
                         <div onClick={() => onUserSelected(user)} className="new-chat-contact-container">
@@ -34,7 +34,7 @@ function NewChat(props: Props) {
                         </div>
                     )})}
             <div onClick={() => props.onClose()} className="new-chat-contact-container new-chat-close-modal">
-                <p>Chiudi</p>
+                <p>Close</p>
             </div>
             </div>
         </Popup>

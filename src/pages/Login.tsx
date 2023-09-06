@@ -67,7 +67,7 @@ function Login() {
           <input
           type="text"
           className="input_field"
-          placeholder="What's your Username?"
+          placeholder="Your Username"
           onChange={(event) => setUsername(event.target.value)}
           />
           )}
@@ -82,7 +82,7 @@ function Login() {
         <input
           type="email"
           className="input_field"
-          placeholder="Il tuo indirizzo email"
+          placeholder="Your Email address"
           onChange={(event) => setEmail(event.target.value)}
           />
           </div>
@@ -97,7 +97,7 @@ function Login() {
         <input
           type="password"
           className="input_field"
-          placeholder="Scegli una password"
+          placeholder="Your Password"
           onChange={(event) => setPassword(event.target.value)}
           />
         </div>
@@ -110,7 +110,7 @@ function Login() {
         {!isSignUp && (
           <span>
             <button className="sign-in_btn" onClick={onSignIn}>
-              Accedi alla chat
+              Start to chat
             </button>
             <a className="login-toggle" onClick={() => setIsSignUp(true)}>
               Don't have an account?

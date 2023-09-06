@@ -115,7 +115,7 @@ function ChatDetail(props: Props) {
             <input
               value={inputContent}
               onKeyDown={handleKeyDown}
-              placeholder={"Invia un messaggio"}
+              placeholder={"Send a message"}
               onChange={(evt) => setInputContent(evt.target.value)}
             ></input>
             <button
@@ -124,7 +124,7 @@ function ChatDetail(props: Props) {
               }}
               className="send-mssg-btn"
             >
-              Invia
+              Send
             </button>
           </div>
         </>
